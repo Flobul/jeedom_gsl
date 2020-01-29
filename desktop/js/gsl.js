@@ -31,6 +31,22 @@
     tr += '<br/>';
     tr += '<span class="cmdAttr" data-l1key="subType"></span>';
     tr += '</td>';
+	tr += '<td>';
+	tr += '<input class="cmdAttr" id="'+ _cmd.id +'value" style="width : 500px; font-style: italic;" readonly="true" value="">';
+	$('#'+_cmd.id +'value').val("loading");
+		jeedom.cmd.execute({
+			id: _cmd.id,
+			cache: 0,
+            notify: false,
+            success: function(result) {
+                $('#'+_cmd.id +'value').val(result);
+            }
+		});
+	tr += '</td>';
+    tr += '<td>';
+    tr += '<span><input type="checkbox" class="cmdAttr" data-l1key="isHistorized"/> {{Historiser}}<br/></span>';
+    tr += '<span><input type="checkbox" class="cmdAttr" data-l1key="isVisible" checked/> {{Afficher}}<br/></span>';
+    tr += '</td>';
     tr += '<td>';
     if (is_numeric(_cmd.id)) {
         tr += '<a class="btn btn-default btn-xs cmdAction" data-action="configure"><i class="fa fa-cogs"></i></a> ';
