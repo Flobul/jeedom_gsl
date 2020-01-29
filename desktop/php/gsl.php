@@ -11,14 +11,14 @@ $eqLogics = eqLogic::byType($plugin->getId());
    <div class="col-lg-12 col-md-9 col-sm-8 eqLogicThumbnailDisplay" style="border-left: solid 1px #EEE; padding-left: 25px;">
     <legend><i class="fa fa-cog"></i> {{Gestion}}</legend>
     <div class="eqLogicThumbnailContainer">
-        <div class="cursor eqLogicAction" data-action="add" style="background-color : #ffffff; height : 120px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >
+        <div class="cursor eqLogicAction" data-action="add" style="background-color : #ffffff; height : 100px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >
             <center>
-                <i class="fa fa-plus-circle" style="font-size : 6em;color:#94ca02;"></i>
+                <i class="fa fa-plus-circle" style="font-size : 2.8em;color:#94ca02;"></i>
             </center>
             <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#94ca02"><center>Ajouter</center></span>
         </div>
-        <div class="cursor eqLogicAction" data-action="gotoPluginConf" style="text-align: center; background-color : #ffffff; height : 120px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
-            <i class="fa fa-wrench" style="font-size : 6em;color:#767676;"></i>
+        <div class="cursor eqLogicAction" data-action="gotoPluginConf" style="text-align: center; background-color : #ffffff; height : 100px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
+            <i class="fa fa-tools" style="font-size : 6em;color:#767676;"></i>
             <br>
             <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676">{{Configuration}}</span>
         </div>
@@ -138,9 +138,11 @@ foreach (jeedom::getConfiguration('eqLogic:category') as $key => $value) {
     <table id="table_cmd" class="table table-bordered table-condensed">
         <thead>
             <tr>
-                <th>{{Nom}}</th>
-                <th>{{Type}}</th>
-                <th>{{Action}}</th>
+                <th style="width: 100px;">{{Nom}}</th>
+                <th style="width: 100px;">{{Type}}</th>
+                <th>{{Valeur}}</th>
+		<th style="width: 100px;">{{Paramètres}}</th>
+                <th style="width: 100px;">{{Action}}</th>
             </tr>
         </thead>
         <tbody>
